@@ -230,6 +230,8 @@ int main(int argc, char **argv) {
 	LOGINFO("Backup of TWRP ramdisk done.\n");
 #endif
 
+	TWFunc::Set_Brightness("0");
+	TWFunc::Set_Brightness(DataManager::GetStrValue("tw_brightness"));
 	// Offer to decrypt if the device is encrypted
 	if (DataManager::GetIntValue(TW_IS_ENCRYPTED) != 0) {
 		if (SkipDecryption) {
